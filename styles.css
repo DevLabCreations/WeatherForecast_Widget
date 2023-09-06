@@ -1,0 +1,81 @@
+:root {
+    --cloud-color: #fff;
+    --bg-color: #87CEEB;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.widget {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.clouds {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+.cloud {
+    background-color: var(--cloud-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 20px;
+    animation: cloudMove 10s linear infinite alternate;
+}
+
+@keyframes cloudMove {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(40px);
+    }
+}
+
+.weather-info {
+    text-align: center;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    margin-top: 20px;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    background: var(--cloud-color);
+}
+
+input[type=range]::-webkit-slider-thumb {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background: var(--cloud-color);
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -5px;
+}
